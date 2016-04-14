@@ -34,7 +34,7 @@
 	$fp = fopen("tabnome.txt", "r");
 	$nometab = fgets($fp, 150);
 	
-	$ris = mysqli_query($con, "SELECT * FROM ".$nometab);
+	$ris = mysqli_query($con, "SELECT * FROM `".$nometab."`");
 	
 	if(!$ris)
 	{
@@ -116,7 +116,7 @@
 		        }
 	        }	
 		
-		    $ris2 = mysqli_query($con, "INSERT INTO ".$nometab." VALUES(".$ins.")");
+		    $ris2 = mysqli_query($con, "INSERT INTO `".$nometab."` VALUES(".$ins.")");
 		
 		    if($ris)
 		    {		

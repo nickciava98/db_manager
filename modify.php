@@ -36,7 +36,7 @@
 	
 	fclose($fp);
 	
-	$ris = mysqli_query($con, "SELECT * FROM ".$nometab);
+	$ris = mysqli_query($con, "SELECT * FROM `".$nometab."`");
 	$colonne = mysqli_num_fields($ris);
 	$nomi = array();
 	$c = 0;
@@ -147,7 +147,7 @@
 	{
 		if(strcmp(hash('sha256', (get_magic_quotes_gpc() ? stripslashes($_POST['cond']): $_POST['cond'])), "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855") != 0)
 		{
-			$ris2 = mysqli_query($con, "UPDATE ".$nometab." SET ".$_POST['nomec']." = '".$_POST['nuovo']."' WHERE ".$_POST['cond']);
+			$ris2 = mysqli_query($con, "UPDATE `".$nometab."` SET ".$_POST['nomec']." = '".$_POST['nuovo']."' WHERE ".$_POST['cond']);
 			
 			if(!$ris2)
 			{

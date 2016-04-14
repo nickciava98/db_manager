@@ -76,7 +76,7 @@
 		fclose($f2);
 	    fclose($file);
 		
-		$ris = mysqli_query($con, "DROP TABLE ".$_POST['nometab']);
+		$ris = mysqli_query($con, "DROP TABLE `".$_POST['nometab']."`");
 		
 		if($ris)
 		{		

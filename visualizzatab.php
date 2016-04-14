@@ -81,7 +81,7 @@
 		fclose($f2);
 	    fclose($file);
 		
-		$ris = mysqli_query($con, "SELECT * FROM ".$_POST['nometab']);
+		$ris = mysqli_query($con, "SELECT * FROM `".$_POST['nometab']."`");
 		
 		if(!$ris)
 		{

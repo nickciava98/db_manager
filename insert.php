@@ -228,6 +228,8 @@
 						$chiave = $chiave.$str[$i];						
 					}
 					
+					print($tabella." ".$chiave);
+					
 				    $campitab3 = $campitab3.", FOREIGN KEY(".$_GET["campo".(string)($c + 1)].") REFERENCES ".$tabella."(".$chiave.")";				
 					$campitab3 = $campitab3.", PRIMARY KEY(".$_GET["campo".(string)($c + 1)].")";
 					$primary = true;
@@ -263,6 +265,8 @@
 						$str = $_GET["foreigntab".(string)($c + 1)];
 						$chiave = $chiave.$str[$i];				
 					}
+					
+					print($tabella." ".$chiave);
 					
 			        $campitab3 = ", FOREIGN KEY(".$_GET["campo".(string)($c + 1)].") REFERENCES ".$tabella."(".$chiave.")";
 			        $foreign = true;			        
@@ -339,7 +343,7 @@
 	    fclose($file);
 	
 	    $fp = fopen("nometab.txt", "r");		
-	    $ris = mysqli_query($con, "CREATE TABLE ".fgets($fp, 150)." (".$campitab.");");
+	    $ris = mysqli_query($con, "CREATE TABLE `".fgets($fp, 150)."` (".$campitab.");");
 	    
 	    fclose($fp);		
 		
